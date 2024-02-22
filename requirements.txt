@@ -1,2 +1,8 @@
 streamlit
 streamlit_mic_recorder
+pypdf2
+langchain
+openai
+tiktoken
+faiss-cpu
+
