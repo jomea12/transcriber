@@ -8,7 +8,7 @@ if 'text_received' not in state:
 
 c1,c2=st.columns(2)
 with c1:
-    st.write("Convert speech to text:")
+    st.write("Talk to the AI:")
 with c2:
     text=speech_to_text(language='en',use_container_width=True,just_once=True,key='STT')
 
@@ -17,9 +17,3 @@ if text:
 
 for text in state.text_received:
     st.text(text)
-
-st.write("Record your voice, and play the recorded audio:")
-audio=mic_recorder(start_prompt="⏺️",stop_prompt="⏹️",key='recorder')
-
-if audio:
-    st.audio(audio['bytes'])
