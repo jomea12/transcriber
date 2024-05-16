@@ -16,4 +16,4 @@ if text:
     state.text_received.append(text)
 
 for text in state.text_received:
-    st.text(text)
+    st.text(text + "niiga)
