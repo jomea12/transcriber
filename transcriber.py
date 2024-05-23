@@ -57,7 +57,7 @@ for text in state.text_received:
 
     reply = completion.choices[0].message.content
     st.text("User: " + text)
-    st.text("N.O.V.A.: " + reply)
+    st.text("Ace: " + reply)
 
 
 
