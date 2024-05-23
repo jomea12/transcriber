@@ -29,7 +29,7 @@ if 'text_received' not in state:
 
 c1,c2=st.columns(2)
 with c1:
-    st.write("Talk to the AI:")
+    st.write("Talk to Ace:")
 with c2:
     text=speech_to_text(language='en',use_container_width=True,just_once=True,key='STT')
 
