@@ -3,7 +3,7 @@ from streamlit_mic_recorder import mic_recorder,speech_to_text
 
 from groq import Groq
 
-st.title('N.O.V.A. - Your AI Studdy Buddy')
+st.title('AceAI - Your AI Studdy Buddy')
 
 messages=[
         {
