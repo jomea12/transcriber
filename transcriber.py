@@ -78,11 +78,7 @@ for text in state.text_received:
         api_key="sk-proj-bOw1PIIebhFVZcKXX104T3BlbkFJnRbR1lxXfaeGGPbtR1ZW"
     )
     with st.spinner('Generating audio...'):
-        response = client.audio.speech.create(
-                model="tts-1",
-                voice="fable",
-                input=reply
-        )
+        response = client.audio.speech.create(model="tts-1", voice="fable", input=reply)
         response.write_to_file("output.mp3")
     with open("output.mp3", "rb") as audio_file:
         st.audio(audio_file, format='audio/mp3')
