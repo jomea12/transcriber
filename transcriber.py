@@ -3,6 +3,8 @@ from streamlit_mic_recorder import mic_recorder,speech_to_text
 
 from groq import Groq
 
+from openai import OpenAI
+
 def autoplay_audio(file_path: str):
     with open(file_path, "rb") as f:
         data = f.read()
