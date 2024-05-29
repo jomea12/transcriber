@@ -1,11 +1,21 @@
 import streamlit as st
 from streamlit_mic_recorder import mic_recorder,speech_to_text
-from RealtimeTTS import TextToAudioStream, SystemEngine, AzureEngine, ElevenlabsEngine
-
-engine = SystemEngine()
-stream = TextToAudioStream(engine)
 
 from groq import Groq
+
+def autoplay_audio(file_path: str):
+    with open(file_path, "rb") as f:
+        data = f.read()
+        b64 = base64.b64encode(data).decode()
+        md = f"""
+            <audio controls autoplay="true">
+            <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+            </audio>
+            """
+        st.markdown(
+            md,
+            unsafe_allow_html=True,
+        )
 
 st.title('AceAI - Your AI Studdy Buddy')
 
@@ -62,13 +72,18 @@ for text in state.text_received:
     reply = completion.choices[0].message.content
     st.text("User: " + text)
     st.text("Ace: " + reply)
-    stream.feed(reply)
-    stream.play_async()
+    client = OpenAI(
+        api_key=open_api_key
+    )
+    with st.spinner('Generating audio...'):
+        response = client.audio.speech.create(
+                model="tts-1",
+                voice="fable,
+                input=reply
+        )
+        response.write_to_file("output.mp3")
+    with open("output.mp3", "rb") as audio_file:
+        st.audio(audio_file, format='audio/mp3')
+
+    autoplay_audio("output.mp3")
     
-
-
-
-
-
-
-
