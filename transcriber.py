@@ -73,7 +73,7 @@ for text in state.text_received:
     st.text("User: " + text)
     st.text("Ace: " + reply)
     client = OpenAI(
-        api_key=open_api_key
+        api_key="sk-proj-bOw1PIIebhFVZcKXX104T3BlbkFJnRbR1lxXfaeGGPbtR1ZW"
     )
     with st.spinner('Generating audio...'):
         response = client.audio.speech.create(
