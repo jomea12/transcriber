@@ -1,7 +1,9 @@
 import streamlit as st
 from streamlit_mic_recorder import mic_recorder,speech_to_text
-import pyttsx3
-engine = pyttsx3.init()
+from RealtimeTTS import TextToAudioStream, SystemEngine, AzureEngine, ElevenlabsEngine
+
+engine = SystemEngine()
+stream = TextToAudioStream(engine)
 
 from groq import Groq
 
@@ -60,8 +62,8 @@ for text in state.text_received:
     reply = completion.choices[0].message.content
     st.text("User: " + text)
     st.text("Ace: " + reply)
-    engine.say(reply)
-    engine.runAndWait()
+    stream.feed(reply)
+    stream.play_async()
     
 
 
