@@ -83,8 +83,7 @@ for text in state.text_received:
     with st.spinner('Generating audio...'):
         response = client.audio.speech.create(model="tts-1", voice="fable", input=reply)
         response.write_to_file("output.mp3")
-    with open("output.mp3", "rb") as audio_file:
-        st.audio(audio_file, format='audio/mp3')
 
     autoplay_audio("output.mp3")
+    os.remove("output.mp3")
     
