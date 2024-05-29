@@ -78,7 +78,7 @@ for text in state.text_received:
     st.text("Ace: " + reply)
     st.text(type(reply))
     client = OpenAI(
-        api_key="sk-proj-bOw1PIIebhFVZcKXX104T3BlbkFJnRbR1lxXfaeGGPbtR1ZW"
+        api_key="sk-proj-RqCXR5olNrVlYqRTHXm4T3BlbkFJw2JfBCKZ14YyqvkMwvXe"
     )
     with st.spinner('Generating audio...'):
         response = client.audio.speech.create(model="tts-1", voice="fable", input=reply)
