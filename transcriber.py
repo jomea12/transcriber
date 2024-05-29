@@ -74,7 +74,6 @@ for text in state.text_received:
         })
 
     reply = completion.choices[0].message.content
-    st.text("User: " + text)
     st.text("Ace: " + reply)
     clientt = OpenAI(
         api_key="sk-"+"proj-"+"d9JHqiI"+"jdsBNyAnRXa"+"9aT3Blbk"+"FJ6qfiFpa"+"I2TsBn"+"0WA1cZR"
