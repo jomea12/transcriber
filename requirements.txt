@@ -7,4 +7,3 @@ tiktoken
 faiss-cpu
 groq
 pyttsx3
-RealtimeTTS
