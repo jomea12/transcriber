@@ -76,11 +76,11 @@ for text in state.text_received:
     reply = completion.choices[0].message.content
     st.text("User: " + text)
     st.text("Ace: " + reply)
-    client = OpenAI(
+    '''client = OpenAI(
         api_key="sk-"+"proj-"+"d9JHqiI"+"jdsBNyAnRXa"+"9aT3Blbk"+"FJ6qfiFpa"+"I2TsBn"+"0WA1cZR"
     )
     with st.spinner('Generating audio...'):
         response = client.audio.speech.create(model="tts-1", voice="fable", input=reply)
         response.write_to_file("output.mp3")
 
-    autoplay_audio("output.mp3")
+    autoplay_audio("output.mp3")'''
