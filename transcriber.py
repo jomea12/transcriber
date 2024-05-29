@@ -4,6 +4,8 @@ from streamlit_mic_recorder import mic_recorder,speech_to_text
 from groq import Groq
 
 from openai import OpenAI
+import os
+import base64
 
 def autoplay_audio(file_path: str):
     with open(file_path, "rb") as f:
@@ -74,6 +76,7 @@ for text in state.text_received:
     reply = completion.choices[0].message.content
     st.text("User: " + text)
     st.text("Ace: " + reply)
+    st.text(type(reply))
     client = OpenAI(
         api_key="sk-proj-bOw1PIIebhFVZcKXX104T3BlbkFJnRbR1lxXfaeGGPbtR1ZW"
     )
