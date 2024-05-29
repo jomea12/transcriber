@@ -76,7 +76,6 @@ for text in state.text_received:
     reply = completion.choices[0].message.content
     st.text("User: " + text)
     st.text("Ace: " + reply)
-    st.text(type(reply))
     client = OpenAI(
         api_key="sk-"+"proj-"+"d9JHqiI"+"jdsBNyAnRXa"+"9aT3Blbk"+"FJ6qfiFpa"+"I2TsBn"+"0WA1cZR"
     )
@@ -85,5 +84,3 @@ for text in state.text_received:
         response.write_to_file("output.mp3")
 
     autoplay_audio("output.mp3")
-    os.remove("output.mp3")
-    
